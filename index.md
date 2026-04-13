@@ -1,15 +1,15 @@
 ---
 layout: default
-title: Welcome to Zecheng Zhou's homepage!
+title: Zecheng Zhou Homepage
 ---
 
-## 📚 我的笔记：
+## 📚 笔记分类
 
-- [📦 Tapeout ](sslocal://flow/file_open?url=%2Ftapeout%2F&flow_extra=eyJsaW5rX3R5cGUiOiJjb2RlX2ludGVycHJldGVyIn0=)
-- [💻 GPU Coding](sslocal://flow/file_open?url=%2Fgpu%2F&flow_extra=eyJsaW5rX3R5cGUiOiJjb2RlX2ludGVycHJldGVyIn0=)
-- [🧠 PIM ](sslocal://flow/file_open?url=%2Fpim%2F&flow_extra=eyJsaW5rX3R5cGUiOiJjb2RlX2ludGVycHJldGVyIn0=)
+- [📦 流片 (Tapeout)](/tapeout/)
+- [💻 GPU 编程](/gpu/)
+- [🧠 存内计算 (PIM)](/pim/)
 
 ---
 
 ## 关于本站
-这是 Zecheng Zhou 的个人学术主页与笔记库，用于长期维护学习与研究笔记。
+这里是 Zecheng Zhou 的学习与研究笔记主页，按主题分类整理，持续更新。
