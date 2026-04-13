@@ -3,6 +3,6 @@
 layout: default
 ---
 
-# Welcome to Zecheng Zhou's homepage!
+# Welcome!
 
-This is my space!
+This is Zecheng Zhou's space!
