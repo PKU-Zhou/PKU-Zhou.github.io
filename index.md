@@ -3,6 +3,5 @@
 layout: default
 ---
 
-# Welcome!
-
-This is Zecheng Zhou's space!
+# learning GPU coding
+# tapeout

@@ -1,8 +1,8 @@
 # ==========================================
 # 网站核心信息（必须和你的域名匹配）
 # ==========================================
-title: Welcome to Zecheng Zhou's homepage!
-description: This is my space!
+title: Welcome!
+description: This is Zecheng Zhou's space!
 url: "https://pku-zhou.github.io"  # 你的GitHub Pages域名
 baseurl: ""  # 个人主页仓库必须留空！
 
