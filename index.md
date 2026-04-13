@@ -7,7 +7,7 @@ title: Welcome to Zecheng Zhou's homepage!
 
 - [📦 Tapeout ](sslocal://flow/file_open?url=%2Ftapeout%2F&flow_extra=eyJsaW5rX3R5cGUiOiJjb2RlX2ludGVycHJldGVyIn0=)
 - [💻 GPU Coding](sslocal://flow/file_open?url=%2Fgpu%2F&flow_extra=eyJsaW5rX3R5cGUiOiJjb2RlX2ludGVycHJldGVyIn0=)
-- [🧠PIM ](sslocal://flow/file_open?url=%2Fpim%2F&flow_extra=eyJsaW5rX3R5cGUiOiJjb2RlX2ludGVycHJldGVyIn0=)
+- [🧠 PIM ](sslocal://flow/file_open?url=%2Fpim%2F&flow_extra=eyJsaW5rX3R5cGUiOiJjb2RlX2ludGVycHJldGVyIn0=)
 
 ---
 

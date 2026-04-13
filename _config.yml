@@ -53,4 +53,4 @@ defaults:
       path: ""
       type: "pim"
     values:
-      category_name: "存算一体"
+      category_name: "PIM"
