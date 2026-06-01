@@ -60,7 +60,7 @@ Home
 
 ### 在已有领域下增加一篇笔记
 
-在对应领域目录下新建 `.md` 或 `子目录/index.md`，例如 `notes/tapeout/basic/xxx.md`：
+在对应领域目录下新建 `.md` 或 `子目录/index.md`，例如 `notes/tapeout/workflow/xxx.md`：
 
 ```yaml
 ---
@@ -186,3 +186,4 @@ git push
 
 - [Just the Docs 文档](https://just-the-docs.github.io/just-the-docs/)
 - [Jekyll 文档](https://jekyllrb.com/docs/)
+- [Qiyu Chen的教程](https://classicalqy.github.io/website_building/)
