@@ -102,7 +102,10 @@ has_children: true        # 若该领域下会有子页
 
 ### 字体
 
-### 
+### 虚线
+```txt
+<hr style="border: none; height: 2px; background: repeating-linear-gradient(90deg, #666 0px, #666 4px, transparent 4px, transparent 8px); border-radius: 2px; margin: 1.5em 0;">
+```
 
 ## 本地预览
 
