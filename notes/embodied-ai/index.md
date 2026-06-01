@@ -1,7 +1,7 @@
 ---
 title: 具身智能笔记
 parent: 我的笔记
-nav_order: 2
+nav_order: 3
 has_children: true
 ---
 

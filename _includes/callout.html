@@ -1,0 +1,29 @@
+{% comment %}
+  文本框片段。用法见 README「文本框」一节。
+  type: neutral | tip | warning | success | error | bordered | gradient | modern
+  content: 正文（支持 Markdown）
+  label: 可选，覆盖默认标题；设为 false 则不显示标题（仅 tip/warning/success/error）
+{% endcomment %}
+{% assign box_type = include.type | default: "neutral" %}
+{% assign body = include.content | markdownify | strip %}
+
+{% case box_type %}
+{% when "neutral", "gray" %}
+<div class="callout callout-neutral">{{ body }}</div>
+{% when "tip", "info" %}
+<div class="callout callout-tip">{% unless include.label == "false" %}<strong>{{ include.label | default: "💡 提示：" }}</strong> {% endunless %}{{ body }}</div>
+{% when "warning" %}
+<div class="callout callout-warning">{% unless include.label == "false" %}<strong>{{ include.label | default: "⚠️ 警告：" }}</strong> {% endunless %}{{ body }}</div>
+{% when "success" %}
+<div class="callout callout-success">{% unless include.label == "false" %}<strong>{{ include.label | default: "✅ 成功：" }}</strong> {% endunless %}{{ body }}</div>
+{% when "error", "danger" %}
+<div class="callout callout-error">{% unless include.label == "false" %}<strong>{{ include.label | default: "❌ 错误：" }}</strong> {% endunless %}{{ body }}</div>
+{% when "bordered", "card" %}
+<div class="callout callout-bordered">{{ body }}</div>
+{% when "gradient", "highlight" %}
+<div class="callout callout-gradient">{{ body }}</div>
+{% when "modern" %}
+<div class="callout callout-modern">{{ body }}</div>
+{% else %}
+<div class="callout callout-neutral">{{ body }}</div>
+{% endcase %}

@@ -107,6 +107,46 @@ has_children: true        # 若该领域下会有子页
 <hr style="border: none; height: 2px; background: repeating-linear-gradient(90deg, #666 0px, #666 4px, transparent 4px, transparent 8px); border-radius: 2px; margin: 1.5em 0;">
 ```
 
+### 文本框
+
+样式定义在 [`_sass/custom/custom.scss`](_sass/custom/custom.scss)，片段在 [`_includes/callout.html`](_includes/callout.html)。在任意 Markdown 正文中写入：
+
+```liquid
+{% include callout.html type="tip" content="这是一条信息提示，用于说明注意事项。" %}
+```
+
+`type` 可选值：
+
+| type | 效果 |
+|------|------|
+| `neutral` 或 `gray` | 灰色背景说明框 |
+| `tip` 或 `info` | 蓝色左边框 + 💡 提示 |
+| `warning` | 黄色左边框 + ⚠️ 警告 |
+| `success` | 绿色左边框 + ✅ 成功 |
+| `error` 或 `danger` | 红色左边框 + ❌ 错误 |
+| `bordered` 或 `card` | 白底边框阴影 |
+| `gradient` 或 `highlight` | 紫色渐变强调 |
+| `modern` | 蓝色全边框圆角 |
+
+多行或含 Markdown 语法时，用 `capture` 包一层：
+
+```liquid
+{% capture note_body %}
+这是**多行**说明，可写列表：
+
+- 第一项
+- 第二项
+{% endcapture %}
+{% include callout.html type="neutral" content=note_body %}
+```
+
+自定义标题（或去掉默认标题）：
+
+```liquid
+{% include callout.html type="tip" label="📌 注意：" content="自定义标题的提示框。" %}
+{% include callout.html type="warning" label=false content="无默认「警告」前缀的警告框。" %}
+```
+
 ## 本地预览
 
 首次或依赖变更后：

@@ -6,3 +6,72 @@
   color: $grey-dk-100;
 }
 
+// 可复用文本框（通过 {% include callout.html %} 调用）
+.callout {
+  margin: 1em 0;
+
+  p:first-child {
+    margin-top: 0;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.callout-neutral {
+  background-color: #f8f9fa;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.callout-tip {
+  background-color: #e3f2fd;
+  border-left: 4px solid #2196f3;
+  padding: 12px 15px;
+  border-radius: 0 4px 4px 0;
+}
+
+.callout-warning {
+  background-color: #fff3cd;
+  border-left: 4px solid #ffc107;
+  padding: 12px 15px;
+  border-radius: 0 4px 4px 0;
+}
+
+.callout-success {
+  background-color: #d4edda;
+  border-left: 4px solid #28a745;
+  padding: 12px 15px;
+  border-radius: 0 4px 4px 0;
+}
+
+.callout-error {
+  background-color: #f8d7da;
+  border-left: 4px solid #dc3545;
+  padding: 12px 15px;
+  border-radius: 0 4px 4px 0;
+}
+
+.callout-bordered {
+  background-color: #ffffff;
+  border: 1px solid #dee2e6;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.callout-gradient {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.callout-modern {
+  background-color: #f0f9ff;
+  border: 2px solid #0ea5e9;
+  padding: 15px;
+  border-radius: 10px;
+}
+
