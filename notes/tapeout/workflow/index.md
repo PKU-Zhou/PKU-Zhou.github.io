@@ -46,6 +46,7 @@ has_children: true
 | up_to_mm_valid | 上游此拍给本级的数据是否有效。         |
 
 ```verilog
+// 公式: 
 assign mm_allowin     = !mm_valid || (mm_ready_go && dn_allowin);
 assign mm_to_dn_valid =  mm_valid && mm_ready_go;
 /*
