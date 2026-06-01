@@ -45,6 +45,17 @@ has_children: true
 | mm_to_dn_valid | 本级此拍是否向下游发射有效事务。       |
 | up_to_mm_valid | 上游此拍给本级的数据是否有效。         |
 
+```verilog
+assign mm_allowin     = !mm_valid || (mm_ready_go && dn_allowin);
+assign mm_to_dn_valid =  mm_valid && mm_ready_go;
+/*
+* 解释: 
+* 1. 本级为空，当然可以收（!mm_valid）。
+* 2. 本级不空时，只有“本级完成 + 下游能收”才能收新的，避免覆盖旧数据。
+* 3. 能发射的前提是“当前持有有效事务且本级完成”。
+*/
+```
+
 
 ### 1.3 控制流与控制单元
 1. 用好各个模块的 done 信号，可以很好地避免计数器 
