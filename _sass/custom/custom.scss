@@ -1,0 +1,42 @@
+.edu-affiliation {
+  display: block;
+  margin-top: 0.2em;
+  font-size: 0.92em;
+  font-style: italic;
+  color: $grey-dk-100;
+}
+
+// 用 div + ::before，避免主题对 hr 的 background 实线覆盖
+.main-content .english-chinese-divider {
+  display: block;
+  width: 100%;
+  height: 0;
+  margin: 1.5rem 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  overflow: visible;
+
+  &::before {
+    content: "";
+    display: block;
+    width: 100%;
+    border-top: 2px dashed $grey-dk-000;
+  }
+}
+
+// 实线
+.main-content .solid-line {
+  display: block;
+  width: 100%;
+  height: 0;
+  margin: 1.5rem 0;
+  border: 0;
+  background: none;
+  &::before {
+    content: "";
+    display: block;
+    width: 100%;
+    border-top: 2px solid $grey-dk-000;
+  }
+}
