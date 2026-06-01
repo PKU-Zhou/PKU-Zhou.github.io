@@ -127,7 +127,9 @@ git commit -m "简要说明本次修改"
 git push
 ```
 
-部署完成后访问 https://pku-zhou.github.io。构建与上线可能需要数分钟。
+部署完成后访问 https://pku-zhou.github.io。
+
+构建与上线可能需要数分钟。
 
 ---
 
