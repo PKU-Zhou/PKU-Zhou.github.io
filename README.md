@@ -1,174 +1,137 @@
-# just-the-docs-template
+# Zecheng Zhou 个人主页
 
-This is a *bare-minimum* template to create a [Jekyll] site that:
+基于 [Jekyll](https://jekyllrb.com/) 与 [Just the Docs](https://just-the-docs.github.io/just-the-docs/) 主题构建，通过 GitHub Pages 发布。
 
-- uses the [Just the Docs] theme;
-- can be built and published on [GitHub Pages];
-- can be built and previewed locally, and published on other platforms.
+**在线地址：** https://pku-zhou.github.io
 
-More specifically, the created site:
+---
 
-- uses a gem-based approach, i.e. uses a `Gemfile` and loads the `just-the-docs` gem;
-- uses the [GitHub Pages / Actions workflow] to build and publish the site on GitHub Pages.
+## 仓库结构
 
-To get started with creating a site, simply:
+```
+├── index.md              # 首页（个人介绍，layout: home）
+├── _config.yml           # 站点标题、URL、默认布局等
+├── notes/                # 学习笔记
+│   ├── index.md          # 「我的笔记」入口
+│   ├── tapeout/          # 流片笔记
+│   ├── gpu-coding/       # GPU 编程笔记
+│   └── embodied-ai/      # 具身智能笔记
+└── assets/               # 图片等静态资源
+```
 
-1. click "[use this template]" to create a GitHub repository
-2. go to Settings > Pages > Build and deployment > Source, and select GitHub Actions
+侧栏层级示意：
 
-If you want to maintain your docs in the `docs` directory of an existing project repo, see [Hosting your docs from an existing project repo](#hosting-your-docs-from-an-existing-project-repo).
+```
+Home
+└── 我的笔记
+    ├── 流片笔记
+    │   └── …（子分支 / 单篇笔记）
+    ├── 具身智能笔记
+    └── GPU 编程笔记
+```
 
-After completing the creation of your new site on GitHub, update it as needed:
+---
 
-## Replace the content of the template pages
+## 写作规范
 
-Update the following files to your own content:
+1. **Front matter 必填**  
+   每个要出现在网站上的 `.md` 文件，开头必须用 `---` 包裹 YAML 配置，至少包含 `title`。
 
-- `index.md` (your new home page)
-- `README.md` (information for those who access your site repo on GitHub)
+2. **`parent` 与 `title` 必须完全一致**  
+   子页的 `parent: xxx` 中的 `xxx`，必须和父页 front matter 里的 `title: xxx` 一字不差（含中文）。
 
-## Changing the version of the theme and/or Jekyll
+3. **同级排序用 `nav_order`**  
+   数字越小越靠上；只影响同一 `parent` 下的兄弟页面。三个领域笔记在 `parent: 我的笔记` 下分别设置 `nav_order: 1/2/3` 即可调整顺序。
 
-Simply edit the relevant line(s) in the `Gemfile`.
+4. **静态资源放 `assets/`**  
+   例如 `assets/images/avatar.jpg`，在 Markdown 中引用：`![说明](/assets/images/avatar.jpg)`。
 
-## Adding a plugin
 
-The Just the Docs theme automatically includes the [`jekyll-seo-tag`] plugin.
+5. **在仓库根目录运行 Jekyll**  
+   不要在 `notes/` 子目录里执行 `jekyll serve`，否则只会构建笔记子目录，首页和完整导航会丢失。
 
-To add an extra plugin, you need to add it in the `Gemfile` *and* in `_config.yml`. For example, to add [`jekyll-default-layout`]:
+---
 
-- Add the following to your site's `Gemfile`:
+## 如何修改内容
 
-  ```ruby
-  gem "jekyll-default-layout"
-  ```
+### 改首页
 
-- And add the following to your site's `_config.yml`:
+编辑根目录 [`index.md`](index.md) 的正文；front matter 中保持 `layout: home`。
 
-  ```yaml
-  plugins:
-    - jekyll-default-layout
-  ```
+### 在已有领域下增加一篇笔记
 
-Note: If you are using a Jekyll version less than 3.5.0, use the `gems` key instead of `plugins`.
+在对应领域目录下新建 `.md` 或 `子目录/index.md`，例如 `notes/tapeout/basic/xxx.md`：
 
-## Publishing your site on GitHub Pages
+```yaml
+---
+title: 页面标题
+parent: 流片笔记          # 父页 title；若挂在子分支下，则 parent 填子分支的 title
+nav_order: 2
+---
 
-1.  If your created site is `YOUR-USERNAME/YOUR-SITE-NAME`, update `_config.yml` to:
+正文内容……
+```
 
-    ```yaml
-    title: YOUR TITLE
-    description: YOUR DESCRIPTION
-    theme: just-the-docs
+若该页下还有子页，父页需加 `has_children: true`。
 
-    url: https://YOUR-USERNAME.github.io/YOUR-SITE-NAME
+### 新开一个领域（侧栏多一项）
 
-    aux_links: # remove if you don't want this link to appear on your pages
-      Template Repository: https://github.com/YOUR-USERNAME/YOUR-SITE-NAME
-    ```
+1. 新建目录，如 `notes/new-topic/index.md`。
+2. Front matter 示例：
 
-2.  Push your updated `_config.yml` to your site on GitHub.
+```yaml
+---
+title: 新领域笔记
+parent: 我的笔记
+nav_order: 4              # 在「我的笔记」下的显示顺序
+has_children: true        # 若该领域下会有子页
+---
 
-3.  In your newly created repo on GitHub:
-    - go to the `Settings` tab -> `Pages` -> `Build and deployment`, then select `Source`: `GitHub Actions`.
-    - if there were any failed Actions, go to the `Actions` tab and click on `Re-run jobs`.
+栏目简介……
+```
 
-## Building and previewing your site locally
+3. 在该目录下继续添加子页面，并正确设置 `parent` 与 `nav_order`。
 
-Assuming [Jekyll] and [Bundler] are installed on your computer:
+### 改站点名称、描述、URL
 
-1.  Change your working directory to the root directory of your site.
+编辑 [`_config.yml`](_config.yml) 中的 `title`、`description`、`url`。
 
-2.  Run `bundle install`.
+---
 
-3.  Run `bundle exec jekyll serve` to build your site and preview it at `localhost:4000`.
+## 本地预览
 
-    The built site is stored in the directory `_site`.
+首次或依赖变更后：
 
-## Publishing your built site on a different platform
+```bash
+bundle install
+```
 
-Just upload all the files in the directory `_site`.
+在**仓库根目录**启动：
 
-## Customization
+```bash
+bundle exec jekyll serve
+```
 
-You're free to customize sites that you create with this template, however you like!
+浏览器打开 http://127.0.0.1:4000 预览。修改 Markdown 后保存，页面会自动刷新（或稍等片刻）。
 
-[Browse our documentation][Just the Docs] to learn more about how to use this theme.
+---
 
-## Hosting your docs from an existing project repo
+## 发布到 GitHub Pages
 
-You might want to maintain your docs in an existing project repo. Instead of creating a new repo using the [just-the-docs template](https://github.com/just-the-docs/just-the-docs-template), you can copy the template files into your existing repo and configure the template's Github Actions workflow to build from a `docs` directory. You can clone the template to your local machine or download the `.zip` file to access the files.
+推送到 `main` 分支后，由 [GitHub Actions](.github/workflows/pages.yml) 自动构建并部署：
 
-### Copy the template files
+```bash
+git status
+git add .
+git commit -m "简要说明本次修改"
+git push
+```
 
-1.  Create a `.github/workflows` directory at your project root if your repo doesn't already have one. Copy the `pages.yml` file into this directory. GitHub Actions searches this directory for workflow files.
+部署完成后访问 https://pku-zhou.github.io。构建与上线可能需要数分钟。
 
-2.  Create a `docs` directory at your project root and copy all remaining template files into this directory.
+---
 
-### Modify the GitHub Actions workflow
+## 参考
 
-The GitHub Actions workflow that builds and deploys your site to Github Pages is defined by the `pages.yml` file. You'll need to edit this file to that so that your build and deploy steps look to your `docs` directory, rather than the project root.
-
-1.  Set the default `working-directory` param for the build job.
-
-    ```yaml
-    build:
-      runs-on: ubuntu-latest
-      defaults:
-        run:
-          working-directory: docs
-    ```
-
-2.  Set the `working-directory` param for the Setup Ruby step.
-
-    ```yaml
-    - name: Setup Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: '3.3'
-          bundler-cache: true
-          cache-version: 0
-          working-directory: '${{ github.workspace }}/docs'
-    ```
-
-3.  Set the path param for the Upload artifact step:
-
-    ```yaml
-    - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: docs/_site/
-    ```
-
-4.  Modify the trigger so that only changes within the `docs` directory start the workflow. Otherwise, every change to your project (even those that don't affect the docs) would trigger a new site build and deploy.
-
-    ```yaml
-    on:
-      push:
-        branches:
-          - "main"
-        paths:
-          - "docs/**"
-    ```
-
-## Licensing and Attribution
-
-This repository is licensed under the [MIT License]. You are generally free to reuse or extend upon this code as you see fit; just include the original copy of the license (which is preserved when you "make a template"). While it's not necessary, we'd love to hear from you if you do use this template, and how we can improve it for future use!
-
-The deployment GitHub Actions workflow is heavily based on GitHub's mixed-party [starter workflows]. A copy of their MIT License is available in [actions/starter-workflows].
-
-----
-
-[^1]: [It can take up to 10 minutes for changes to your site to publish after you push the changes to GitHub](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/creating-a-github-pages-site-with-jekyll#creating-your-site).
-
-[Jekyll]: https://jekyllrb.com
-[Just the Docs]: https://just-the-docs.github.io/just-the-docs/
-[GitHub Pages]: https://docs.github.com/en/pages
-[GitHub Pages / Actions workflow]: https://github.blog/changelog/2022-07-27-github-pages-custom-github-actions-workflows-beta/
-[Bundler]: https://bundler.io
-[use this template]: https://github.com/just-the-docs/just-the-docs-template/generate
-[`jekyll-default-layout`]: https://github.com/benbalter/jekyll-default-layout
-[`jekyll-seo-tag`]: https://jekyll.github.io/jekyll-seo-tag
-[MIT License]: https://en.wikipedia.org/wiki/MIT_License
-[starter workflows]: https://github.com/actions/starter-workflows/blob/main/pages/jekyll.yml
-[actions/starter-workflows]: https://github.com/actions/starter-workflows/blob/main/LICENSE
+- [Just the Docs 文档](https://just-the-docs.github.io/just-the-docs/)
+- [Jekyll 文档](https://jekyllrb.com/docs/)
