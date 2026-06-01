@@ -5,7 +5,7 @@ nav_order: 1
 has_toc: false
 ---
 
-# Zecheng Zhou's Homepage!
+# **Zecheng Zhou's Homepage!**
 
 ## About me
 
