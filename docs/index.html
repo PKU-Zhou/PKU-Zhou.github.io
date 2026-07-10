@@ -1,6 +1,6 @@
 <!-- 入口文件 -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 
 <head>
     <meta charset="UTF-8">
@@ -12,8 +12,19 @@
     <!-- 设置浏览器图标 -->
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+    
     <!-- 默认主题 -->
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/lib/themes/vue.css">
+    <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/lib/themes/vue.css"> -->
+    <!-- 泡泡主题 -->
+    <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/buble.css">
+     <!-- 河豚主题 -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify@4.13.1/lib/themes/dolphin.css"> -->
+    <!-- 暗黑主题 -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify@4.13.1/lib/themes/dark.css"> -->
+     <!-- 纯色主题 -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify@4.13.1/lib/themes/pure.css"> -->
+
 </head>
 
 <body>
@@ -22,13 +33,13 @@
     <script>
         window.$docsify = {
             // 项目名称
-            name: 'Docsify-Guide',
+            name: 'Zecheng Zhou\'s Homepage!',
             // 仓库地址，点击右上角的Github章鱼猫头像会跳转到此地址
-            repo: 'https://github.com/YSGStudyHards',
+            repo: 'https://github.com/PKU-Zhou/PKU-Zhou.github.io',
             // 侧边栏支持，默认加载的是项目根目录下的_sidebar.md文件
             loadSidebar: true,
             // 导航栏支持，默认加载的是项目根目录下的_navbar.md文件
-            loadNavbar: true,
+            loadNavbar: false,
             // 封面支持，默认加载的是项目根目录下的_coverpage.md文件
             coverpage: true,
             // 最大支持渲染的标题层级
@@ -37,14 +48,10 @@
             subMaxLevel: 4,
             // 小屏设备下合并导航栏到侧边栏
             mergeNavbar: true,
-        }
-    </script>
-    <script>
-        // 搜索配置(url：https://docsify.js.org/#/zh-cn/plugins?id=%e5%85%a8%e6%96%87%e6%90%9c%e7%b4%a2-search)
-        window.$docsify = {
+            // 搜索配置(url：https://docsify.js.org/#/zh-cn/plugins?id=%e5%85%a8%e6%96%87%e6%90%9c%e7%b4%a2-search)
             search: {
                 maxAge: 86400000,// 过期时间，单位毫秒，默认一天
-                paths: auto,// 注意：仅适用于 paths: 'auto' 模式
+                paths: 'auto',// 注意：仅适用于 paths: 'auto' 模式
                 placeholder: '搜索',
                 // 支持本地化
                 placeholder: {
@@ -68,6 +75,26 @@
     <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
     <!--在所有的代码块上添加一个简单的Click to copy按钮来允许用户从你的文档中轻易地复制代码-->
     <script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
+
+    <!-- 代码语法高亮 -->
+<script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-php.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/prismjs@1.30.0/components/prism-cpp.js"></script>
+<script src="//cdn.jsdelivr.net/npm/prismjs@1.30.0/components/prism-python.js"></script>
+<script src="//cdn.jsdelivr.net/npm/prismjs@1.30.0/components/prism-verilog.js"></script>
+<script src="//cdn.jsdelivr.net/npm/prismjs@1.30.0/components/prism-tcl.js"></script>
+<script src="//cdn.jsdelivr.net/npm/prismjs@1.30.0/components/prism-powershell.js"></script>
+<script src="//cdn.jsdelivr.net/npm/prismjs@1.30.0/components/prism-vim.js"></script>
+<script src="//cdn.jsdelivr.net/npm/prismjs@1.30.0/components/prism-perl.js"></script>
+<script src="//cdn.jsdelivr.net/npm/prismjs@1.30.0/components/prism-markdown.js"></script>
+<script src="//cdn.jsdelivr.net/npm/prismjs@1.30.0/components/prism-makefile.js"></script>
+<script src="//cdn.jsdelivr.net/npm/prismjs@1.30.0/components/prism-log.js"></script>
+<script src="//cdn.jsdelivr.net/npm/prismjs@1.30.0/components/prism-latex.js"></script>
+<script src="//cdn.jsdelivr.net/npm/prismjs@1.30.0/components/prism-json.js"></script>
+<script src="//cdn.jsdelivr.net/npm/prismjs@1.30.0/components/prism-c.js"></script>
+<script src="//cdn.jsdelivr.net/npm/prismjs@1.30.0/components/prism-bash.js"></script>
+<script src="//cdn.jsdelivr.net/npm/prismjs@1.30.0/components/index.js"></script>
+
 </body>
 
 </html>
