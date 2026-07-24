@@ -8,3 +8,4 @@
   * [Hardware Architecture](/PersonalNotes/HardwareArchitecture.md)
   * [Tape Out Skills](/PersonalNotes/TapeOutSkills.md)
   * [AI Infra](/PersonalNotes/AIInfra.md)
+  * [出国开会](/PersonalNotes/出国开会.md)
