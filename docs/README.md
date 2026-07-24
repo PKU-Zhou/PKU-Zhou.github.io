@@ -2,6 +2,4 @@
 
 <!-- 作为主页内容进行渲染 -->
 
-> Welcome to Zecheng Zhou's Homepage!
-
-PKU-Zhou.github.io
+> Welcome to [Zecheng Zhou's Homepage](https://PKU-Zhou.github.io)!
